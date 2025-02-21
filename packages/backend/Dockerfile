@@ -43,7 +43,7 @@ FROM backend_build AS static_files
 ENV HASHID_FIELD_SALT='' \
     DJANGO_PARENT_HOST='' \
     DJANGO_SECRET_KEY='build' \
-    DB_CONNECTION='{"dbname":"build","username":"build","password":"build","host":"db","port":5432}' \
+    DB_CONNECTION='{"dbname":"build","username":"build","password":"build","host":"db","port":5433}' \
     REDIS_CONNECTION=redis://redis:6379 \
     WORKERS_EVENT_BUS_NAME='' \
     PYTHONPATH=/pkgs/__pypackages__/3.11/lib

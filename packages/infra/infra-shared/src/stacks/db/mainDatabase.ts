@@ -47,8 +47,8 @@ export class MainDatabase extends Construct {
     });
 
     const dbPort = new ec2.Port({
-      fromPort: 5432,
-      toPort: 5432,
+      fromPort: 5433,
+      toPort: 5433,
       protocol: ec2.Protocol.TCP,
       stringRepresentation: '',
     });
