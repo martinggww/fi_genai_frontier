@@ -2,6 +2,6 @@
 
 export $(egrep -v '^#' ./.test.env | xargs)
 
-export DB_CONNECTION='{"dbname":"build","username":"build","password":"build","host":"db","port":5432}'
+export DB_CONNECTION='{"dbname":"build","username":"build","password":"build","host":"db","port":5433}'
 
 python manage.py collectstatic --no-input

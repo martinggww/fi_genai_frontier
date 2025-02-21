@@ -1,3 +1,7 @@
+packages/backend/.env.shared
+packages/workers/.env.shared
+packages/backend/.env.shared
+
 # compiled output
 dist
 tmp
