@@ -11,8 +11,8 @@ declare const process: {
     SB_CLOUDFRONT_CERTIFICATE_ARN: string;
     SB_CERTIFICATE_DOMAIN: string;
     SB_LOAD_BALANCER_CERTIFICATE_ARN: string;
-    SB_HOSTED_ZONE_ID: string;
-    SB_HOSTED_ZONE_NAME: string;
+    MF_HOSTED_ZONE_ID: string;
+    MF_HOSTED_ZONE_NAME: string;
     PROJECT_NAME: string;
     ENV_STAGE: string;
     VERSION: string;
@@ -132,7 +132,7 @@ async function readEnvConfig(envStage: string): Promise<EnvConfigFileContent> {
     throw new Error('SB_DOMAIN_API env variable has to be defined');
   }
 
-  const hostedZoneName = process.env.SB_HOSTED_ZONE_NAME ?? '';
+  const hostedZoneName = process.env.MF_HOSTED_ZONE_NAME ?? '';
   const certDomain = process.env.SB_CERTIFICATE_DOMAIN;
   const defaultDomain = certDomain ?? `${envStage}.${hostedZoneName}`;
 
@@ -157,7 +157,7 @@ async function readEnvConfig(envStage: string): Promise<EnvConfigFileContent> {
         process.env.SB_LOAD_BALANCER_CERTIFICATE_ARN ?? '',
     },
     hostedZone: {
-      id: process.env.SB_HOSTED_ZONE_ID ?? '',
+      id: process.env.MF_HOSTED_ZONE_ID ?? '',
       name: hostedZoneName,
     },
   };

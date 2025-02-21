@@ -66,10 +66,10 @@ export async function validateStageEnv() {
       example: 'docker-compose.yml:docker-compose.ci.yml',
       default: 'docker-compose.yml:docker-compose.ci.yml',
     }),
-    SB_HOSTED_ZONE_ID: envalid.str({
+    MF_HOSTED_ZONE_ID: envalid.str({
       desc: 'Id of a AWS Route53 hosted zone of a domain used to host services of this environment',
     }),
-    SB_HOSTED_ZONE_NAME: envalid.str({
+    MF_HOSTED_ZONE_NAME: envalid.str({
       desc: 'Name of a AWS Route53 hosted zone of a domain used to host services of this environment',
       example: 'example.com',
     }),
