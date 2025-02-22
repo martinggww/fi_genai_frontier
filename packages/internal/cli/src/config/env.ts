@@ -16,14 +16,14 @@ dotenv.config({ path: resolve(getRootPath(), '.env') });
 export const ENV_STAGE_LOCAL = 'local';
 export const IS_CI = Boolean(process.env.CI ?? false);
 
-export const SB_TELEMETRY_DISABLED =
-  IS_CI || process.env.SB_TELEMETRY_DISABLED == '1';
-export const SB_TELEMETRY_DEBUG =
-  IS_CI || process.env.SB_TELEMETRY_DEBUG == '1';
+export const MF_TELEMETRY_DISABLED =
+  IS_CI || process.env.MF_TELEMETRY_DISABLED == '1';
+export const MF_TELEMETRY_DEBUG =
+  IS_CI || process.env.MF_TELEMETRY_DEBUG == '1';
 
-export const SB_TELEMETRY_URL = process.env.SB_TELEMETRY_URL ?? sbTelemetry[0];
+export const MF_TELEMETRY_URL = process.env.MF_TELEMETRY_URL ?? sbTelemetry[0];
 
-export const SB_TELEMETRY_KEY = process.env.SB_TELEMETRY_KEY ?? sbTelemetry[1];
+export const MF_TELEMETRY_KEY = process.env.MF_TELEMETRY_KEY ?? sbTelemetry[1];
 
 const exec = promisify(childProcess.exec);
 
@@ -67,33 +67,33 @@ export async function validateStageEnv() {
       default: 'docker-compose.yml:docker-compose.ci.yml',
     }),
     MF_HOSTED_ZONE_ID: envalid.str({
-      desc: 'Id of a AWS Route53 hosted zone of a domain used to host services of this environment',
+      desc: 'IdDDD of a AWS Route53 hosted zone of a domain used to host services of this environment',
     }),
     MF_HOSTED_ZONE_NAME: envalid.str({
       desc: 'Name of a AWS Route53 hosted zone of a domain used to host services of this environment',
       example: 'example.com',
     }),
-    SB_DOMAIN_ADMIN_PANEL: envalid.str({
+    MF_DOMAIN_ADMIN_PANEL: envalid.str({
       desc: 'A domain used to host an admin panel service',
       example: 'admin.example.com',
     }),
-    SB_DOMAIN_API: envalid.str({
+    MF_DOMAIN_API: envalid.str({
       desc: 'A domain used to host an API backend service',
       example: 'api.example.com',
     }),
-    SB_DOMAIN_WEB_APP: envalid.str({
+    MF_DOMAIN_WEB_APP: envalid.str({
       desc: 'A domain used to host the web application',
       example: 'app.example.com',
     }),
-    SB_DOMAIN_DOCS: envalid.str({
+    MF_DOMAIN_DOCS: envalid.str({
       desc: 'A domain used to host the documentation',
       example: 'docs.example.com',
     }),
-    SB_DOMAIN_CDN: envalid.str({
+    MF_DOMAIN_CDN: envalid.str({
       desc: 'A domain used to static assets delivery',
       example: 'cdn.example.com',
     }),
-    SB_BASIC_AUTH: envalid.str({
+    MF_BASIC_AUTH: envalid.str({
       default: '',
       desc: 'Username and password separated by colon (":") used to protect website form unauthorized access',
       example: 'admin:password',
@@ -102,15 +102,15 @@ export async function validateStageEnv() {
       desc: 'Specifies a different path separator for items listed in COMPOSE_FILE. Visit https://docs.docker.com/compose/environment-variables/envvars/#compose_path_separator to read more',
       default: ':',
     }),
-    SB_CLOUDFRONT_CERTIFICATE_ARN: envalid.str({
+    MF_CLOUDFRONT_CERTIFICATE_ARN: envalid.str({
       desc: 'ARN of already generated certificate that should be attached to CloudFront distribution. This certificate needs to be generated in us-east-1 region.',
       default: '',
     }),
-    SB_LOAD_BALANCER_CERTIFICATE_ARN: envalid.str({
+    MF_LOAD_BALANCER_CERTIFICATE_ARN: envalid.str({
       desc: 'ARN of already generated certificate that should be attached to Load Balancer. This certificate needs to be generated in the same region as the application.',
       default: '',
     }),
-    SB_CERTIFICATE_DOMAIN: envalid.str({
+    MF_CERTIFICATE_DOMAIN: envalid.str({
       desc: 'The domain will be used to generate a certificate, if not provided will be used envStage and hosted zone name',
       default: '',
     }),

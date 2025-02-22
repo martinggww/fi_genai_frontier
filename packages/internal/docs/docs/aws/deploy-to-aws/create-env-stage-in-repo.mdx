@@ -1,5 +1,5 @@
 ---
-description: Steps required to deploy SaaS Boilerplate on AWS
+description: Steps required to deploy Market Frontier on AWS
 ---
 
 import ProjectName from '../../shared/components/ProjectName.component';
@@ -71,18 +71,18 @@ For this step you'll need the hosted zone parameters that you acquired in the pr
 ```shell
 pnpm saas aws set-var MF_HOSTED_ZONE_ID XYZ
 pnpm saas aws set-var MF_HOSTED_ZONE_NAME example.com
-pnpm saas aws set-var SB_DOMAIN_ADMIN_PANEL admin.qa.example.com
-pnpm saas aws set-var SB_DOMAIN_FLOWER flower.qa.example.com
-pnpm saas aws set-var SB_DOMAIN_API api.qa.example.com
-pnpm saas aws set-var SB_DOMAIN_CDN cdn.qa.example.com
-pnpm saas aws set-var SB_DOMAIN_DOCS docs.qa.example.com
-pnpm saas aws set-var SB_DOMAIN_WEB_APP app.qa.example.com
+pnpm saas aws set-var MF_DOMAIN_ADMIN_PANEL admin.qa.example.com
+pnpm saas aws set-var MF_DOMAIN_FLOWER flower.qa.example.com
+pnpm saas aws set-var MF_DOMAIN_API api.qa.example.com
+pnpm saas aws set-var MF_DOMAIN_CDN cdn.qa.example.com
+pnpm saas aws set-var MF_DOMAIN_DOCS docs.qa.example.com
+pnpm saas aws set-var MF_DOMAIN_WEB_APP app.qa.example.com
 ```
 
 :::info
 `MF_HOSTED_ZONE_ID` and `MF_HOSTED_ZONE_NAME` can be skipped if you are using externally managed DNS. In that case,
 certificates for CloudFront distribution and Load Balancer should be already generated, and their ARNs provided in
-`SB_CLOUDFRONT_CERTIFICATE_ARN` and `SB_LOAD_BALANCER_CERTIFICATE_ARN` parameters. As the last step,
+`MF_CLOUDFRONT_CERTIFICATE_ARN` and `MF_LOAD_BALANCER_CERTIFICATE_ARN` parameters. As the last step,
 CNAME DNS records pointing to CloudFront distribution and Load Balancer need to be manually added.
 :::
 
@@ -93,7 +93,7 @@ CNAME DNS records pointing to CloudFront distribution and Load Balancer need to 
 production environment. Set a following variable to override the default behaviour:
 
 ```
-pnpm saas aws set-var SB_CERTIFICATE_DOMAIN example.com
+pnpm saas aws set-var MF_CERTIFICATE_DOMAIN example.com
 ```
 
 Without setting this variable you'll encounter an error during deployment
@@ -120,7 +120,7 @@ We recommend utilizing the `parallel` mode for optimal performance and efficienc
 limits of AWS CodeBuild have been adjusted accordingly.
 
 ```shell
-pnpm saas aws set-var SB_CI_MODE <parallel/simple>
+pnpm saas aws set-var MF_CI_MODE <parallel/simple>
 ```
 
 :::info
@@ -134,7 +134,7 @@ It's a good idea to prevent unauthorized access to staging environments so we su
 if this isn't a production environment.
 
 ```shell
-pnpm saas aws set-var SB_BASIC_AUTH username:password
+pnpm saas aws set-var MF_BASIC_AUTH username:password
 ```
 
 ### \[Optional\] Set tools env variables
@@ -146,16 +146,16 @@ application on specific environment. Then, you will be able to check currently d
 To configure `tools` package env variables follow the example below.
 
 ```shell
-pnpm saas aws set-var SB_TOOLS_ENABLED <true/false>
-pnpm saas aws set-var SB_TOOLS_BASIC_AUTH username:password
-pnpm saas aws set-var SB_TOOLS_HOSTED_ZONE_ID XYZ
-pnpm saas aws set-var SB_TOOLS_HOSTED_ZONE_NAME example.com
-pnpm saas aws set-var SB_TOOLS_DOMAIN_VERSION_MATRIX status.example.com
+pnpm saas aws set-var MF_TOOLS_ENABLED <true/false>
+pnpm saas aws set-var MF_TOOLS_BASIC_AUTH username:password
+pnpm saas aws set-var MF_TOOLS_HOSTED_ZONE_ID XYZ
+pnpm saas aws set-var MF_TOOLS_HOSTED_ZONE_NAME example.com
+pnpm saas aws set-var MF_TOOLS_DOMAIN_VERSION_MATRIX status.example.com
 ```
 
 :::info
 
-If you set `SB_TOOLS_ENABLED` to `true` make sure to deploy **version matrix** component before first CI pipeline run.
+If you set `MF_TOOLS_ENABLED` to `true` make sure to deploy **version matrix** component before first CI pipeline run.
 
 Follow the [deployment instructions](../../../working-with-sb/dev-tools/version-matrix#deployment) for more details.
 

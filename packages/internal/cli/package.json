@@ -1,7 +1,7 @@
 {
   "name": "@sb/cli",
   "version": "4.1.1",
-  "description": "SaaS Boilerplate CLI",
+  "description": "Market Frontier CLI",
   "author": "Patryk Ziemkowski pziemkowski@apptension.com",
   "bin": {
     "saas": "./bin/run"

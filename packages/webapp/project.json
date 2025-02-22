@@ -58,7 +58,7 @@
         "color": true,
         "commands": [
           "pnpm cdk deploy *WebAppStack",
-          "pnpm nx run tools:upload-service-version webapp \"url=https://${SB_DOMAIN_WEB_APP}\""
+          "pnpm nx run tools:upload-service-version webapp \"url=https://${MF_DOMAIN_WEB_APP}\""
         ],
         "parallel": false
       }

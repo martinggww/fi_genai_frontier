@@ -11,7 +11,7 @@ triggering CodeBuild and CodePipeline to execute the deployment. Artifacts are p
 
 ### Get artifacts bucket name
 
-SaaS Boilerplate generates a user for you that has minimal permissions required for uploading code artifact to the S3
+Market Frontier generates a user for you that has minimal permissions required for uploading code artifact to the S3
 bucket. In order to implement a synchronization logic we need to get a bucket name and credentials of the user.
 To get the bucket name use the following command:
 ```shell
@@ -23,7 +23,7 @@ environment.
 
 ### Get authentication credentials for CI AWS user
 
-In order to upload the code artifact to the S3 bucket, the CI pipeline needs to authenticate with AWS. SaaS Boilerplate
+In order to upload the code artifact to the S3 bucket, the CI pipeline needs to authenticate with AWS. Market Frontier
 generates a `external-ci` user for you that has minimal permissions required for uploading code artifact to the S3
 bucket. To get the credentials of the user follow these steps:
 
@@ -59,11 +59,11 @@ bucket. To get the credentials of the user follow these steps:
 
 5. Create following secrets under `Environment secrets`:
 
-   - `SB_CI_ARTIFACTS_BUCKET` – [artifacts bucket name](#get-artifacts-bucket-name)
+   - `MF_CI_ARTIFACTS_BUCKET` – [artifacts bucket name](#get-artifacts-bucket-name)
 
 6. Create following secrets under `Environment variables`:
 
-   - `SB_DEPLOY_STAGE` – set to the name of the environment
+   - `MF_DEPLOY_STAGE` – set to the name of the environment
 
 7. Edit the `.github/workflows/deploy-*.yml` files to match your environments.
 
@@ -101,6 +101,6 @@ bucket. To get the credentials of the user follow these steps:
 
 7. Create following variables for the environment:
 
-   - `SB_CI_ARTIFACTS_BUCKET` – [artifacts bucket name](#get-artifacts-bucket-name)
+   - `MF_CI_ARTIFACTS_BUCKET` – [artifacts bucket name](#get-artifacts-bucket-name)
 
-   - `SB_DEPLOY_ENVIRONMENT_NAME` - set to the name of the full project environment name (`saas-qa` for example)
+   - `MF_DEPLOY_ENVIRONMENT_NAME` - set to the name of the full project environment name (`saas-qa` for example)

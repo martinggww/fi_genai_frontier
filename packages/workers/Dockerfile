@@ -1,12 +1,12 @@
-ARG SB_MIRROR_REPOSITORY=''
-ARG SB_PULL_THROUGH_CACHE_REPOSITORY=''
+ARG MF_MIRROR_REPOSITORY=''
+ARG MF_PULL_THROUGH_CACHE_REPOSITORY=''
 ##
 # Chamber installation stage
 ##
 
-FROM ${SB_MIRROR_REPOSITORY}segment/chamber:2 AS chamber
+FROM ${MF_MIRROR_REPOSITORY}segment/chamber:2 AS chamber
 
-FROM ${SB_PULL_THROUGH_CACHE_REPOSITORY}python:3.11-slim-bullseye
+FROM ${MF_PULL_THROUGH_CACHE_REPOSITORY}python:3.11-slim-bullseye
 
 ENV APP_PATH=/app
 ENV SRC_CORE_PATH=packages/internal/core

@@ -1,27 +1,27 @@
 declare const process: {
   env: {
-    SB_BASIC_AUTH: string;
-    SB_DOMAIN_API: string;
-    SB_DOMAIN_WEB_APP: string;
-    SB_DOMAIN_CDN: string;
-    SB_DOMAIN_DOCS: string;
-    SB_DOMAIN_WWW: string;
-    SB_DOMAIN_ADMIN_PANEL: string;
-    SB_DOMAIN_FLOWER: string;
-    SB_CLOUDFRONT_CERTIFICATE_ARN: string;
-    SB_CERTIFICATE_DOMAIN: string;
-    SB_LOAD_BALANCER_CERTIFICATE_ARN: string;
+    MF_BASIC_AUTH: string;
+    MF_DOMAIN_API: string;
+    MF_DOMAIN_WEB_APP: string;
+    MF_DOMAIN_CDN: string;
+    MF_DOMAIN_DOCS: string;
+    MF_DOMAIN_WWW: string;
+    MF_DOMAIN_ADMIN_PANEL: string;
+    MF_DOMAIN_FLOWER: string;
+    MF_CLOUDFRONT_CERTIFICATE_ARN: string;
+    MF_CERTIFICATE_DOMAIN: string;
+    MF_LOAD_BALANCER_CERTIFICATE_ARN: string;
     MF_HOSTED_ZONE_ID: string;
     MF_HOSTED_ZONE_NAME: string;
     PROJECT_NAME: string;
     ENV_STAGE: string;
     VERSION: string;
-    SB_TOOLS_ENABLED: string;
-    SB_TOOLS_BASIC_AUTH: string;
-    SB_TOOLS_HOSTED_ZONE_NAME: string;
-    SB_TOOLS_HOSTED_ZONE_ID: string;
-    SB_TOOLS_DOMAIN_VERSION_MATRIX: string;
-    SB_CI_MODE: string;
+    MF_TOOLS_ENABLED: string;
+    MF_TOOLS_BASIC_AUTH: string;
+    MF_TOOLS_HOSTED_ZONE_NAME: string;
+    MF_TOOLS_HOSTED_ZONE_ID: string;
+    MF_TOOLS_DOMAIN_VERSION_MATRIX: string;
+    MF_CI_MODE: string;
   };
 };
 
@@ -108,19 +108,19 @@ async function readConfig(): Promise<ConfigFileContent> {
       envVariables: {},
     },
     toolsConfig: {
-      enabled: process.env.SB_TOOLS_ENABLED === 'true',
-      basicAuth: process.env.SB_TOOLS_BASIC_AUTH,
+      enabled: process.env.MF_TOOLS_ENABLED === 'true',
+      basicAuth: process.env.MF_TOOLS_BASIC_AUTH,
       hostedZone: {
-        id: process.env.SB_TOOLS_HOSTED_ZONE_ID || '',
-        name: process.env.SB_TOOLS_HOSTED_ZONE_NAME || '',
+        id: process.env.MF_TOOLS_HOSTED_ZONE_ID || '',
+        name: process.env.MF_TOOLS_HOSTED_ZONE_NAME || '',
       },
       domains: {
-        versionMatrix: process.env.SB_TOOLS_DOMAIN_VERSION_MATRIX,
+        versionMatrix: process.env.MF_TOOLS_DOMAIN_VERSION_MATRIX,
       },
     },
     CIConfig: {
       mode:
-        process.env.SB_CI_MODE === CI_MODE.SIMPLE
+        process.env.MF_CI_MODE === CI_MODE.SIMPLE
           ? CI_MODE.SIMPLE
           : CI_MODE.PARALLEL,
     },
@@ -128,33 +128,33 @@ async function readConfig(): Promise<ConfigFileContent> {
 }
 
 async function readEnvConfig(envStage: string): Promise<EnvConfigFileContent> {
-  if (!process.env.SB_DOMAIN_API) {
-    throw new Error('SB_DOMAIN_API env variable has to be defined');
+  if (!process.env.MF_DOMAIN_API) {
+    throw new Error('MF_DOMAIN_API env variable has to be defined');
   }
 
   const hostedZoneName = process.env.MF_HOSTED_ZONE_NAME ?? '';
-  const certDomain = process.env.SB_CERTIFICATE_DOMAIN;
+  const certDomain = process.env.MF_CERTIFICATE_DOMAIN;
   const defaultDomain = certDomain ?? `${envStage}.${hostedZoneName}`;
 
   return {
     webAppConfig: {
       envVariables: {},
     },
-    basicAuth: process.env.SB_BASIC_AUTH,
+    basicAuth: process.env.MF_BASIC_AUTH,
     domains: {
-      api: process.env.SB_DOMAIN_API ?? `api.${defaultDomain}`,
-      webApp: process.env.SB_DOMAIN_WEB_APP ?? `app.${defaultDomain}`,
-      cdn: process.env.SB_DOMAIN_CDN ?? `cdn.${defaultDomain}`,
-      docs: process.env.SB_DOMAIN_DOCS ?? `docs.${defaultDomain}`,
-      www: process.env.SB_DOMAIN_WWW ?? `www.${defaultDomain}`,
-      adminPanel: process.env.SB_DOMAIN_ADMIN_PANEL ?? `admin.${defaultDomain}`,
-      flower: process.env.SB_DOMAIN_FLOWER ?? `flower.${defaultDomain}`,
+      api: process.env.MF_DOMAIN_API ?? `api.${defaultDomain}`,
+      webApp: process.env.MF_DOMAIN_WEB_APP ?? `app.${defaultDomain}`,
+      cdn: process.env.MF_DOMAIN_CDN ?? `cdn.${defaultDomain}`,
+      docs: process.env.MF_DOMAIN_DOCS ?? `docs.${defaultDomain}`,
+      www: process.env.MF_DOMAIN_WWW ?? `www.${defaultDomain}`,
+      adminPanel: process.env.MF_DOMAIN_ADMIN_PANEL ?? `admin.${defaultDomain}`,
+      flower: process.env.MF_DOMAIN_FLOWER ?? `flower.${defaultDomain}`,
     },
     certificates: {
-      cloudfrontCertificateArn: process.env.SB_CLOUDFRONT_CERTIFICATE_ARN ?? '',
+      cloudfrontCertificateArn: process.env.MF_CLOUDFRONT_CERTIFICATE_ARN ?? '',
       domain: certDomain ?? '',
       loadBalancerCertificateArn:
-        process.env.SB_LOAD_BALANCER_CERTIFICATE_ARN ?? '',
+        process.env.MF_LOAD_BALANCER_CERTIFICATE_ARN ?? '',
     },
     hostedZone: {
       id: process.env.MF_HOSTED_ZONE_ID ?? '',

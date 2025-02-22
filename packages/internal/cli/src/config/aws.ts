@@ -83,13 +83,13 @@ export const loginToECR = async (
       { silent: true },
     );
 
-    process.env.SB_MIRROR_REPOSITORY = `${mirrorRepoUrl}/dockerhub-mirror/`;
-    process.env.SB_PULL_THROUGH_CACHE_REPOSITORY = `${mirrorRepoUrl}/ecr-public/docker/library/`;
+    process.env.MF_MIRROR_REPOSITORY = `${mirrorRepoUrl}/dockerhub-mirror/`;
+    process.env.MF_PULL_THROUGH_CACHE_REPOSITORY = `${mirrorRepoUrl}/ecr-public/docker/library/`;
 
     context.log(
       `Successfully logged into ECR repository.
-  SB_MIRROR_REPOSITORY=${process.env.SB_MIRROR_REPOSITORY}
-  SB_PULL_THROUGH_CACHE_REPOSITORY=${process.env.SB_PULL_THROUGH_CACHE_REPOSITORY}`,
+  MF_MIRROR_REPOSITORY=${process.env.MF_MIRROR_REPOSITORY}
+  MF_PULL_THROUGH_CACHE_REPOSITORY=${process.env.MF_PULL_THROUGH_CACHE_REPOSITORY}`,
     );
   } catch (error) {
     context.warn('Login to ECR registry failed.');

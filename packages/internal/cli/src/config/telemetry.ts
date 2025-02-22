@@ -7,17 +7,17 @@ import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions'
 import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-proto';
 
 import {
-  SB_TELEMETRY_DISABLED,
-  SB_TELEMETRY_KEY,
-  SB_TELEMETRY_URL,
+  MF_TELEMETRY_DISABLED,
+  MF_TELEMETRY_KEY,
+  MF_TELEMETRY_URL,
 } from './env';
 
-export const isEnabled = !SB_TELEMETRY_DISABLED;
+export const isEnabled = !MF_TELEMETRY_DISABLED;
 
 export const traceExporter = new OTLPTraceExporter({
-  url: SB_TELEMETRY_URL,
+  url: MF_TELEMETRY_URL,
   headers: {
-    'x-honeycomb-team': SB_TELEMETRY_KEY,
+    'x-honeycomb-team': MF_TELEMETRY_KEY,
   },
 });
 

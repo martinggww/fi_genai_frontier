@@ -7,7 +7,7 @@ Please do not publicly disclose potential security vulnerabilities. Instead, rep
 determine the severity of the problem and provide a fix without putting existing projects at risk.
 
 If you would like to provide a patch, please **do not open a pull request**. Instead, create a commit on your fork of
-SaaS Boilerplate and run this command:
+Market Frontier and run this command:
 
 ```bash
 git format-patch HEAD~1..HEAD --stdout > patch.txt

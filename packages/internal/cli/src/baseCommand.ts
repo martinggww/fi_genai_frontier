@@ -107,9 +107,9 @@ export abstract class BaseCommand<T extends typeof Command> extends Command {
 ------ Notice ------
 This CLI collects various anonymous events, warnings, and errors to improve the CLI tool and enhance your user experience.
 Read more: https://docs.demo.saas.apptoku.com/working-with-sb/dev-tools/telemetry
-If you want to opt out of telemetry, you can set the environment variable SB_TELEMETRY_DISABLED to 1 in your shell.
+If you want to opt out of telemetry, you can set the environment variable MF_TELEMETRY_DISABLED to 1 in your shell.
 For example:
-   export SB_TELEMETRY_DISABLED=1
+   export MF_TELEMETRY_DISABLED=1
     \x1b[0m`);
   }
 }

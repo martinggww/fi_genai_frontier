@@ -70,9 +70,9 @@ definitions:
           - |
             app_version=$(git describe --tags --first-parent --abbrev=11 --long --dirty --always)
             echo "VERSION=${app_version}" >> .env
-            artifact_name="${SB_DEPLOY_ENVIRONMENT_NAME}-entrypoint"
+            artifact_name="${MF_DEPLOY_ENVIRONMENT_NAME}-entrypoint"
             zip -r -q "${artifact_name}.zip" .
-            aws s3 cp "${artifact_name}.zip" "s3://${SB_CI_ARTIFACTS_BUCKET}/${artifact_name}"
+            aws s3 cp "${artifact_name}.zip" "s3://${MF_CI_ARTIFACTS_BUCKET}/${artifact_name}"
 
     - step: &webappTest
         name: 'webapp: Lint & test'

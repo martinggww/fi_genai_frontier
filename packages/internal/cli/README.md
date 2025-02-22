@@ -1,8 +1,8 @@
-# SaaS Boilerplate CLI
+# Market Frontier CLI
 
 <!-- toc -->
 
-- [SaaS Boilerplate CLI](#saas-boilerplate-cli)
+- [Market Frontier CLI](#saas-boilerplate-cli)
 - [Usage](#usage)
 - [Commands](#commands)
 <!-- tocstop -->
@@ -662,14 +662,14 @@ _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.2.1
 
 ## `saas infra bootstrap`
 
-Bootstrap infrastructure in AWS account by creating resources necessary to start working with SaaS Boilerplate
+Bootstrap infrastructure in AWS account by creating resources necessary to start working with Market Frontier
 
 ```
 USAGE
   $ saas infra bootstrap
 
 DESCRIPTION
-  Bootstrap infrastructure in AWS account by creating resources necessary to start working with SaaS Boilerplate
+  Bootstrap infrastructure in AWS account by creating resources necessary to start working with Market Frontier
 
 EXAMPLES
   $ saas infra bootstrap

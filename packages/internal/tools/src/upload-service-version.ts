@@ -1,12 +1,12 @@
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 
 const ENV_STAGE = process.env.ENV_STAGE;
-const SB_TOOLS_ENABLED = process.env.SB_TOOLS_ENABLED;
+const MF_TOOLS_ENABLED = process.env.MF_TOOLS_ENABLED;
 const PROJECT_NAME = process.env.PROJECT_NAME;
 const CURRENT_VERSION = process.env.VERSION;
 const VERSIONS_BUCKET = `${PROJECT_NAME}-status-dashboard`;
 
-if (SB_TOOLS_ENABLED !== 'true') {
+if (MF_TOOLS_ENABLED !== 'true') {
   console.log('Global tools are disabled. Skipping upload-service-version');
   process.exit(0);
 }

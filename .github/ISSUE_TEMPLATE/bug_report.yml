@@ -1,5 +1,5 @@
 name: "\U0001F41E Bug report"
-description: Report an issue with SaaS Boilerplate
+description: Report an issue with Market Frontier
 body:
   - type: markdown
     attributes:

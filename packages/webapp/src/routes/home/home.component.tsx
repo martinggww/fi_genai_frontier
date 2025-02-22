@@ -132,7 +132,7 @@ export const Home = () => {
         <AlertTitle>Heads up!</AlertTitle>
         <AlertDescription className="space-y-4">
           <div>
-            Each feature you see here is a module demonstrating the versatility and usability of the SaaS Boilerplate.
+            Each feature you see here is a module demonstrating the versatility and usability of the Market Frontier.
             Please remember, these modules are simply examples. You are encouraged to customize, adjust, and modify each
             module to best fit your application's needs.
           </div>
@@ -156,7 +156,7 @@ export const Home = () => {
               </li>
             </ol>
           </div>
-          <div>Remember, the SaaS Boilerplate is your starting point - make it your own!</div>
+          <div>Remember, the Market Frontier is your starting point - make it your own!</div>
         </AlertDescription>
       </Alert>
 
