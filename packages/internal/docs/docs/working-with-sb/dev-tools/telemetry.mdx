@@ -3,7 +3,7 @@ title: Telemetry
 ---
 import ProjectName from '../../shared/components/ProjectName.component';
 
-# SaaS Boilerplate CLI Telemetry
+# Market Frontier CLI Telemetry
 The <ProjectName /> CLI is designed to offer an efficient and user-friendly experience. To help us improve the service
 for everyone, the CLI collects anonymous feature usage information, errors encountered, and other relevant performance
 metrics.
@@ -33,23 +33,23 @@ Telemetry data is collected automatically when you use the CLI. This data is the
 analytical purposes. We take care to anonymize all data so that it cannot be traced back to individual users.
 
 ## How Can I Inspect Collected Data?
-You can inspect the data being collected by setting the `SB_TELEMETRY_DEBUG` environment variable to `1`.
+You can inspect the data being collected by setting the `MF_TELEMETRY_DEBUG` environment variable to `1`.
 
 Example:
 
 ```shell
-SB_TELEMETRY_DEBUG=1 pnpm saas [some-command]
+MF_TELEMETRY_DEBUG=1 pnpm saas [some-command]
 ```
 
 When this environment variable is set, the CLI will display the telemetry data collected for that session.
 
 ## Can I Opt-Out?
-Yes, you can opt-out of telemetry data collection. To do so, set the `SB_TELEMETRY_DISABLED` environment variable to `1`.
+Yes, you can opt-out of telemetry data collection. To do so, set the `MF_TELEMETRY_DISABLED` environment variable to `1`.
 
 Example:
 
 ```shell
-SB_TELEMETRY_DISABLED=1 pnpm saas [some-command]
+MF_TELEMETRY_DISABLED=1 pnpm saas [some-command]
 ```
 
 By setting this environment variable, the CLI will no longer collect any telemetry data.

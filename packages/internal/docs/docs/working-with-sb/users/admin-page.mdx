@@ -5,7 +5,7 @@ description: Show or hide pages based on user role
 
 ## Access Policies
 
-Access policies are used in the SaaS Boilerplate to restrict access to queries and mutations.
+Access policies are used in the Market Frontier to restrict access to queries and mutations.
 This ensures that only authorized users can perform certain actions in the application.
 
 ### Creating new Access Policy
@@ -27,7 +27,7 @@ class AdminFullAccess(AccessPolicy):
 ```
 
 :::info
-Access policies in the SaaS Boilerplate are implemented using the [Django REST - Access Policy](https://rsinger86.github.io/drf-access-policy/) library.
+Access policies in the Market Frontier are implemented using the [Django REST - Access Policy](https://rsinger86.github.io/drf-access-policy/) library.
 This library provides a simple and flexible way to define access policies.
 :::
 
@@ -43,7 +43,7 @@ With this access policy in place, any query or mutation that is protected by it 
 ### Restricting access with Access Policies
 
 :::caution
-By default, the SaaS Boilerplate uses the `IsAuthenticated` permission class from Django REST Framework to restrict access to API endpoints.
+By default, the Market Frontier uses the `IsAuthenticated` permission class from Django REST Framework to restrict access to API endpoints.
 This means that only authenticated users are able to access the API endpoints.
 
 You can change the default permissions by modifying the `REST_FRAMEWORK` setting in your Django settings file.

@@ -19,8 +19,8 @@ if (process.env.GTM_CONTAINER_ID) {
   };
 }
 module.exports = {
-  title: 'SaaS Boilerplate by Apptension',
-  tagline: 'SaaS Boilerplate is not a boiler on a plate',
+  title: 'Market Frontier by Apptension',
+  tagline: 'Market Frontier is not a boiler on a plate',
   url: 'https://docs.demo.saas.apptoku.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -35,9 +35,9 @@ module.exports = {
       },
     },
     navbar: {
-      title: 'SaaS Boilerplate by Apptension',
+      title: 'Market Frontier by Apptension',
       logo: {
-        alt: 'SaaS Boilerplate by Apptension',
+        alt: 'Market Frontier by Apptension',
         src: 'img/logo.svg',
         srcDark: 'img/logoDark.svg',
       },
@@ -47,7 +47,7 @@ module.exports = {
           position: 'right',
         },
         {
-          label: 'SaaS Boilerplate website',
+          label: 'Market Frontier website',
           href: 'https://apptension.com/saas-boilerplate?utm_source=docs&utm_medium=referral&utm_campaign=SaaS%20Boilerplate&utm_term=SaaS%20Boilerplate',
           position: 'right',
         },
@@ -62,7 +62,7 @@ module.exports = {
     footer: {
       style: 'dark',
       links: [],
-      copyright: `Copyright © ${new Date().getFullYear()} SaaS Boilerplate by <a href="https://apptension.com?utm_source=docs&utm_medium=referral&utm_campaign=SaaS%20Boilerplate&utm_term=SaaS%20Boilerplate" target="_blank">Apptension</a>.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Market Frontier by <a href="https://apptension.com?utm_source=docs&utm_medium=referral&utm_campaign=SaaS%20Boilerplate&utm_term=SaaS%20Boilerplate" target="_blank">Apptension</a>.`,
     },
     colorMode: {
       defaultMode: 'dark',
@@ -71,8 +71,8 @@ module.exports = {
     ...algoliaSearch,
   },
   customFields: {
-    projectName: 'SaaS Boilerplate',
-    displayLocalUseInfo: process.env.SB_DISPLAY_LOCAL_USE_INFO || false,
+    projectName: 'Market Frontier',
+    displayLocalUseInfo: process.env.MF_DISPLAY_LOCAL_USE_INFO || false,
   },
   presets: [
     [

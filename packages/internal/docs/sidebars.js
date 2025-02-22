@@ -16,12 +16,12 @@ module.exports = {
         },
         {
           type: 'link',
-          label: 'What is SaaS Boilerplate',
+          label: 'What is Market Frontier',
           href: '/introduction',
         },
         {
           type: 'link',
-          label: 'Working with SaaS Boilerplate',
+          label: 'Working with Market Frontier',
           href: '/working-with-sb',
         },
         {
@@ -227,7 +227,7 @@ module.exports = {
   introductionSidebar: [
     {
       type: 'category',
-      label: 'What is SaaS Boilerplate?',
+      label: 'What is Market Frontier?',
 
       link: {
         type: 'doc',
@@ -300,7 +300,7 @@ module.exports = {
   workingWithSidebar: [
     {
       type: 'category',
-      label: 'Working with SaaS Boilerplate',
+      label: 'Working with Market Frontier',
 
       link: {
         type: 'doc',

@@ -208,7 +208,7 @@ export const Sidebar = (props: HTMLAttributes<HTMLDivElement>) => {
             </nav>
             <Alert variant="info">
               <AlertTitle className="text-sm">
-                SaaS Boilerplate by{' '}
+                Market Frontier by{' '}
                 <a href="https://apptension.com" target="_blank" rel="noreferrer">
                   Apptension
                 </a>

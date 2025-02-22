@@ -14,11 +14,11 @@ export default class SetVar extends BaseCommand<typeof SetVar> {
   static examples = [
     `$ <%= config.bin %> <%= command.id %> MF_HOSTED_ZONE_ID XYZ`,
     `$ <%= config.bin %> <%= command.id %> MF_HOSTED_ZONE_NAME example.com`,
-    `$ <%= config.bin %> <%= command.id %> SB_DOMAIN_ADMIN_PANEL admin.qa.example.com`,
-    `$ <%= config.bin %> <%= command.id %> SB_DOMAIN_API api.qa.example.com`,
-    `$ <%= config.bin %> <%= command.id %> SB_DOMAIN_CDN cdn.qa.example.com`,
-    `$ <%= config.bin %> <%= command.id %> SB_DOMAIN_DOCS docs.qa.example.com`,
-    `$ <%= config.bin %> <%= command.id %> SB_DOMAIN_WEB_APP app.qa.example.com`,
+    `$ <%= config.bin %> <%= command.id %> MF_DOMAIN_ADMIN_PANEL admin.qa.example.com`,
+    `$ <%= config.bin %> <%= command.id %> MF_DOMAIN_API api.qa.example.com`,
+    `$ <%= config.bin %> <%= command.id %> MF_DOMAIN_CDN cdn.qa.example.com`,
+    `$ <%= config.bin %> <%= command.id %> MF_DOMAIN_DOCS docs.qa.example.com`,
+    `$ <%= config.bin %> <%= command.id %> MF_DOMAIN_WEB_APP app.qa.example.com`,
   ];
 
   static args = {

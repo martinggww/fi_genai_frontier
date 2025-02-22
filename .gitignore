@@ -46,6 +46,6 @@ __pypackages__/
 .DS_Store
 Thumbs.db
 
-# SaaS Boilerplate
+# Market Frontier
 .saas-boilerplate
 .nx/cache

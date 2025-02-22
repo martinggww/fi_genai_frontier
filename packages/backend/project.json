@@ -78,7 +78,7 @@
         "color": true,
         "commands": [
           "pnpm cdk deploy *ApiStack",
-          "pnpm nx run tools:upload-service-version api \"url=https://${SB_DOMAIN_API}\""
+          "pnpm nx run tools:upload-service-version api \"url=https://${MF_DOMAIN_API}\""
         ],
         "parallel": false
       }
